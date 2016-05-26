@@ -1,4 +1,4 @@
-require 'Rails_helper'
+require 'rails_helper'
 
   feature "User submits a new artist do" do
   scenario "they see a page for the individual artist" do
