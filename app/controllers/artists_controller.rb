@@ -1,5 +1,7 @@
 class ArtistsController < ApplicationController
+
   def index
+    @artists = Artist.all
   end
 
   def new
@@ -13,6 +15,12 @@ class ArtistsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def destroy
+    @artist = Artist.find(params[:id])
+    @artist.destroy
+    redirect_to artists_path
   end
 
   def show
