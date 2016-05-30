@@ -1,4 +1,6 @@
 class ArtistsController < ApplicationController
+
+
   def index
     @artists = Artist.all
   end
@@ -42,7 +44,11 @@ class ArtistsController < ApplicationController
 
 private
 
+  def set_artist
+    @artist = Artist.find(params[:id ])
+  end
+
   def artist_params
-    params.require(:artist).permit(:name, :image_path)  
+    params.require(:artist).permit(:name, :image_path)
   end
 end
