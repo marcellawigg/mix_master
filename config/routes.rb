@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   resources :artists do
     resources :songs, only: [:new, :create]
   end
-
+  root to: 'artists#index'
   resources :songs, only: [:show]
   resources :playlists, only: [:index, :new, :create, :show, :edit, :update]
   get '/auth/spotify/callback', to: 'sessions#create'
